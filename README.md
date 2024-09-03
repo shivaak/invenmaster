@@ -11,7 +11,8 @@ docker build -t invenmaster:latest .
 ## Running the application
 
 - `docker-compose.prod.yml`: Docker Compose file for the production environment.
-- `docker-compose.staging.yml`: Docker Compose file for the staging environment.
+- `docker-compose.dev.yml`: Docker Compose file for the dev environment.
+- `docker-compose.local.yml`: Docker Compose file for the local environment.
 
 ## Setting Up Networks
 
@@ -36,12 +37,12 @@ export PROD_DB_PASSWORD=<PWD>
 
 ```
 
-### Staging Environment Variables
+### Dev Environment Variables
 
 ```env
-export STAGING_DB_URL=jdbc:postgresql://<POSTGRES_HOST>:5432/<DB_NAME>
-export STAGING_DB_USERNAME=<USERNAME>
-export STAGING_DB_PASSWORD=<PWD>
+export DEV_DB_URL=jdbc:postgresql://<POSTGRES_HOST>:5432/<DB_NAME>
+export DEV_DB_USERNAME=<USERNAME>
+export DEV_DB_PASSWORD=<PWD>
 ```
 
 ## Running the Application
@@ -55,15 +56,24 @@ export STAGING_DB_PASSWORD=<PWD>
    docker-compose -p invenmaster-prod -f docker-compose.prod.yaml up -d
    ```
 
-### Staging
+### Dev
 
 1. Ensure that the PostgreSQL and ELK containers are running in the `shared_db_network` and `shared_elk_network` networks.
 2. Run the Docker Compose setup:
 
    ```bash
-   docker-compose -p invenmaster-staging -f docker-compose.staging.yaml up -d
+   docker-compose -p invenmaster-dev -f docker-compose.dev.yaml up -d
    ```
 
+### Local
+
+1. Ensure that the PostgreSQL and ELK containers are running in the `shared_db_network` and `shared_elk_network` networks.
+2. Run the Docker Compose setup:
+
+   ```bash
+   docker-compose -p invenmaster-local -f docker-compose.local.yaml up -d
+   ```
+   
 ## Stopping the Application
 
 ### Production
@@ -71,8 +81,14 @@ export STAGING_DB_PASSWORD=<PWD>
    docker-compose -p invenmaster-prod -f docker-compose.prod.yaml down
    ```
 
-### Staging
+### Dev
 
    ```bash
-   docker-compose -p invenmaster-staging -f docker-compose.staging.yaml down
+   docker-compose -p invenmaster-dev -f docker-compose.dev.yaml down
+   ```
+
+### Local
+
+   ```bash
+   docker-compose -p invenmaster-local -f docker-compose.local.yaml down
    ```

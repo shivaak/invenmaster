@@ -5,15 +5,15 @@ networks:
     external: true
 
 services:
-  invenmaster-staging:
+  invenmaster-dev:
     image: invenmaster:latest
-    container_name: invenmaster-staging
+    container_name: invenmaster-dev
     environment:
-      SPRING_PROFILES_ACTIVE: staging
+      SPRING_PROFILES_ACTIVE: dev
       SERVER_PORT: 6001
-      DB_URL: ${STAGING_DB_URL}
-      DB_USERNAME: ${STAGING_DB_USERNAME}
-      DB_PASSWORD: ${STAGING_DB_PASSWORD}
+      DB_URL: ${DEV_DB_URL}
+      DB_USERNAME: ${DEV_DB_USERNAME}
+      DB_PASSWORD: ${DEV_DB_PASSWORD}
     ports:
       - "6001:6001"
     networks:
