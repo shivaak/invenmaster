@@ -1,0 +1,20 @@
+version: '3.8'
+
+networks:
+  shared_db_network:
+    external: true
+
+services:
+  invenmaster-prod:
+    image: invenmaster:latest
+    container_name: invenmaster-prod
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SERVER_PORT: 7001
+      DB_URL: ${PROD_DB_URL}
+      DB_USERNAME: ${PROD_DB_USERNAME}
+      DB_PASSWORD: ${PROD_DB_PASSWORD}
+    ports:
+      - "7001:7001"
+    networks:
+      - shared_db_network

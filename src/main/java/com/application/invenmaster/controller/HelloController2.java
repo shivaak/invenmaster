@@ -13,7 +13,7 @@ public class HelloController2 {
 
     private final ApplicationInfo applicationInfo;
 
-    @GetMapping("hello")
+    @GetMapping("hello2")
     public String getHello(){
         return "Hello controller 2 " + applicationInfo.getAppName();
     }
