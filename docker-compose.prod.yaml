@@ -15,6 +15,6 @@ services:
       DB_USERNAME: ${PROD_DB_USERNAME}
       DB_PASSWORD: ${PROD_DB_PASSWORD}
     ports:
-      - "7001:7001"
+      - "${SERVER_PORT:-7001}:${SERVER_PORT:-7001}"
     networks:
       - shared_db_network

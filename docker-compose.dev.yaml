@@ -15,6 +15,6 @@ services:
       DB_USERNAME: ${DEV_DB_USERNAME}
       DB_PASSWORD: ${DEV_DB_PASSWORD}
     ports:
-      - "6001:6001"
+      - "${SERVER_PORT:-6001}:${SERVER_PORT:-6001}"
     networks:
       - shared_db_network
