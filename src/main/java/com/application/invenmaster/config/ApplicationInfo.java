@@ -11,4 +11,7 @@ public class ApplicationInfo {
     @Value("${spring.application.name}")
     private String appName;
 
+    @Value("${BUILD_ID:unknown}")
+    private String buildId;
+
 }

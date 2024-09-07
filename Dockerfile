@@ -1,6 +1,12 @@
 # Use an official OpenJDK runtime as a parent image
 FROM openjdk:17-jdk-slim
 
+# Add build argument
+ARG BUILD_ID
+
+# Set environment variable
+ENV BUILD_ID=${BUILD_ID}
+
 # Set the working directory inside the container
 WORKDIR /app
 

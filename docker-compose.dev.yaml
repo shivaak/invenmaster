@@ -6,7 +6,7 @@ networks:
 
 services:
   invenmaster-dev:
-    image: invenmaster:latest
+    image: shivaak/invenmaster:0.0.1-SNAPSHOT-dev
     container_name: invenmaster-dev
     environment:
       SPRING_PROFILES_ACTIVE: dev
