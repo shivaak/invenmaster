@@ -17,4 +17,9 @@ public class HelloController2 {
     public String getHello(){
         return "Hello controller 2 " + applicationInfo.getAppName();
     }
+
+    @GetMapping("hello3")
+    public String getHello3(){
+        return "Hello controller 3";
+    }
 }
