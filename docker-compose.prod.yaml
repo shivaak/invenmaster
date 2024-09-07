@@ -18,3 +18,4 @@ services:
       - "${SERVER_PORT:-7001}:${SERVER_PORT:-7001}"
     networks:
       - shared_db_network
+    restart: unless-stopped
