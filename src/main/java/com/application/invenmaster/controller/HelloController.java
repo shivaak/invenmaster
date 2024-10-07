@@ -17,7 +17,7 @@ public class HelloController {
 
     @GetMapping("hello")
     public String getHello(){
-        return "Muruga from test5 " + applicationInfo.getAppName();
+        return "Muruga from test6 " + applicationInfo.getAppName();
     }
 
     @GetMapping("version")
